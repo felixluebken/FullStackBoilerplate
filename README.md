@@ -3,15 +3,19 @@ A Simple Full-Stack Boilerplate
 This boilerplate uses React & Django to create a full-stack application, simplifying your development process. It handles all the pains, including authentication, token management, and social auth. (possibly the least fun part of full stack development) This beautiful boilerplate also comes with a rest framework, image compression, mysql packages, and any aws s3 integrations. (using /media is also an option, but impractical for a scalable production backend)
 
 **Why am I making this?**
+
 When starting full-stack development, there are a lot of hurdles, which basic tutorials do not teach you. The biggest one I've encountered in the past year is SECURE authentication using tokens. Although there are good medium articles, describing the process down to a pinch, they do not fully apply in a production environment. For that reason I made this as a starting point, so you don't have to worry about any of the technicalities, and just focus on implementing the features the client wants.
 
 **Why use Django?**
+
 Well there are plenty of reasons to use Django as supposed to a Node.js based backend, such as Express. For beginners, Django handles a whole plethera of low-level nasty work, which we won't have to worry about. This high level framework allows us to prevent things like SQL-Injections, and speed up development process without worrying about minor details.
 
 **Why use React / React Native?**
+
 This ones kinda self explanatory. React has become the industry standard in the past decade, and it most likely won't be changing anytime soon. Although vue is also a similar alternative, for this project we will be using React or React Native. (for mobile) 
 
 **Heres how everything works in conjunction:**
+
 ![chart](https://miro.medium.com/max/1400/1*lAMsvtB6afHwTQYCNM1xvw.png)
 This chart is from a neat little article by Bennett Garner on medium. Contains some very useful info to get started.
 [Click here to read!](https://bennettgarner.medium.com/react-on-django-getting-started-f30de8d23504)
