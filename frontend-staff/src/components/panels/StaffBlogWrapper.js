@@ -69,7 +69,7 @@ function StaffBlogWrapper(props) {
       width: 300,
       editable: false,
       headerClassName: 'data-grid--header',
-      renderCell: (params) => <Typography sx={{fontWeight:400}} variant="caption" noWrap component="div" align="left" style={{color:"#FF5622",userSelect:"none"}}>
+      renderCell: (params) => <Typography sx={{fontWeight:400}} variant="caption" noWrap component="div" align="left" style={{color:"#274472",userSelect:"none"}}>
           {params.value}
       </Typography>
     },
@@ -341,8 +341,8 @@ function StaffBlogWrapper(props) {
             selectionModel={itemSelection}
         />
         </div>
-        <Button variant="contained" onClick={() => {handleOpenAddItem()}} style={{backgroundColor:"#3552FB",float:"right",marginLeft:"10px"}}>Add {props.label}</Button>
-        <Button variant="contained" onClick={() => {props.deleteSelection(itemSelection);setSearch("");}} style={{backgroundColor:"#3552FB",float:"right"}}>Delete Selection</Button>
+        <Button variant="contained" onClick={() => {handleOpenAddItem()}} style={{backgroundColor:"#274472",float:"right",marginLeft:"10px"}}>Add {props.label}</Button>
+        <Button variant="contained" onClick={() => {props.deleteSelection(itemSelection);setSearch("");}} style={{backgroundColor:"#274472",float:"right"}}>Delete Selection</Button>
 
 
         <Modal
@@ -404,7 +404,7 @@ function StaffBlogWrapper(props) {
                 <FormControlLabel control={<Checkbox checked={pinned} onChange={handlePinnedChange} />} label="Pinned" />
               </div>
             </Paper>
-            <Button variant="contained" onClick={() => checkAddInput()} style={{backgroundColor:"#3552FB",float:"right"}}>Add</Button>
+            <Button variant="contained" onClick={() => checkAddInput()} style={{backgroundColor:"#274472",float:"right"}}>Add</Button>
           </Box>
         </Modal>
 
@@ -468,7 +468,7 @@ function StaffBlogWrapper(props) {
                 <FormControlLabel control={<Checkbox checked={pinned} onChange={handlePinnedChange} />} label="Pinned" />
               </div>
             </Paper>
-            <Button variant="contained" onClick={() => checkEditInput()} style={{backgroundColor:"#3552FB",float:"right"}}>Modify</Button>
+            <Button variant="contained" onClick={() => checkEditInput()} style={{backgroundColor:"#274472",float:"right"}}>Modify</Button>
           </Box>
         </Modal>
 

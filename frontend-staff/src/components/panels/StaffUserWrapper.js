@@ -76,7 +76,7 @@ function StaffUserWrapper(props) {
       width: 100,
       editable: false,
       headerClassName: 'data-grid--header',
-      renderCell: (params) => <Typography sx={{fontWeight:400}} variant="caption" noWrap component="div" align="left" style={{color:"#FF5622",userSelect:"none"}}>
+      renderCell: (params) => <Typography sx={{fontWeight:400}} variant="caption" noWrap component="div" align="left" style={{color:"#274472",userSelect:"none"}}>
           {params.value}
       </Typography>
     },
@@ -86,18 +86,8 @@ function StaffUserWrapper(props) {
       width: 100,
       editable: false,
       headerClassName: 'data-grid--header',
-      renderCell: (params) => <Typography sx={{fontWeight:400}} variant="caption" noWrap component="div" align="left" style={{color:"#FF5622",userSelect:"none"}}>
+      renderCell: (params) => <Typography sx={{fontWeight:400}} variant="caption" noWrap component="div" align="left" style={{color:"#274472",userSelect:"none"}}>
         {params.value}
-      </Typography>
-    },
-    {
-      field: 'city',
-      headerName: 'City',
-      width: 100,
-      editable: false,
-      headerClassName: 'data-grid--header',
-      renderCell: (params) => <Typography sx={{fontWeight:400}} variant="caption" noWrap component="div" align="left" style={{color:"#27282B",userSelect:"none"}}>
-        {getCityName(params.value)}
       </Typography>
     },
     {
@@ -121,56 +111,6 @@ function StaffUserWrapper(props) {
       </Typography>
     },
     {
-      field: 'total_purchases',
-      headerName: 'Purchases',
-      sortable:false,
-      editable:false,
-      width: 90,
-      headerClassName: 'data-grid--header',
-      renderCell: (params) => <div 
-        style={{
-            backgroundSize:"cover",
-            backgroundPosition:"center",
-            width:"100px",
-            height:"30px",
-            borderRadius:"25px",
-            border:"2px solid #1DCC99",
-            display:"flex",
-            justifyContent:"space-around",
-            alignItems:"center"
-        }}
-      >
-        <Typography sx={{fontWeight:400}} variant="caption" noWrap component="div" align="left" style={{color:"#393942",userSelect:"none"}}>
-          {params.value}
-        </Typography>
-      </div>,
-    },
-    {
-      field: 'total_revenue',
-      headerName: 'Revenue',
-      sortable:false,
-      editable:false,
-      width: 90,
-      headerClassName: 'data-grid--header',
-      renderCell: (params) => <div 
-        style={{
-            backgroundSize:"cover",
-            backgroundPosition:"center",
-            width:"100px",
-            height:"30px",
-            borderRadius:"25px",
-            backgroundColor:"#1DCC99",
-            display:"flex",
-            justifyContent:"space-around",
-            alignItems:"center"
-        }}
-      >
-        <Typography sx={{fontWeight:400}} variant="caption" noWrap component="div" align="left" style={{color:"#393942",userSelect:"none"}}>
-          {"€"+params.value}
-        </Typography>
-      </div>,
-    },
-    {
       field: 'is_staff',
       headerName: 'Staff',
       editable: false,
@@ -189,58 +129,6 @@ function StaffUserWrapper(props) {
         else {
           return(
             <IconButton onClick={() => handleToggleStaff(params.row.email)}>
-              <CancelIcon  fontSize='small' style={{color:"#880808"}} />
-            </IconButton>
-          )
-  
-        }
-      }
-    },
-    {
-      field: 'is_organizer',
-      headerName: 'Org',
-      editable: false,
-      width: 60,
-  
-      headerClassName: 'data-grid--header',
-      renderCell: (params) => {
-        if(params.value) {
-          return(
-            <IconButton onClick={() => handleToggleOrganizer(params.row.email)}>
-              <CheckCircleIcon fontSize='small' style={{color:"rgb(29, 204, 153)"}} />
-            </IconButton>
-  
-          )
-        }
-        else {
-          return(
-            <IconButton onClick={() => handleToggleOrganizer(params.row.email)}>
-              <CancelIcon  fontSize='small' style={{color:"#880808"}} />
-            </IconButton>
-          )
-  
-        }
-      }
-    },
-    {
-      field: 'is_verified_organizer',
-      headerName: 'Verif',
-      editable: false,
-      width: 60,
-  
-      headerClassName: 'data-grid--header',
-      renderCell: (params) => {
-        if(params.value) {
-          return(
-            <IconButton onClick={() => handleToggleVerified(params.row.email)}>
-              <CheckCircleIcon fontSize='small' style={{color:"rgb(29, 204, 153)"}} />
-            </IconButton>
-  
-          )
-        }
-        else {
-          return(
-            <IconButton onClick={() => handleToggleVerified(params.row.email)}>
               <CancelIcon  fontSize='small' style={{color:"#880808"}} />
             </IconButton>
           )

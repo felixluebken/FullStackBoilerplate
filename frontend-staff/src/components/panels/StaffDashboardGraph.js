@@ -17,7 +17,7 @@ function StaffDashboardGraph(props) {
             fill: true,
             lineTension: 0.3,
             backgroundColor: 'rgba(53, 82, 251, 0.1)',
-            borderColor: '#3552FB',
+            borderColor: '#274472',
             borderCapStyle: 'butt',
             borderDash: [],
             borderDashOffset: 0.0,

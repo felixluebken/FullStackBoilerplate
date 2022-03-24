@@ -104,7 +104,7 @@ class StaffMain extends Component {
     authenticateUser = (email,password) => {
         axios
             .post(proxy+"oauth2/token/", {
-                "client_id":"3s77VBZG0WbK4HubaP0V7pQfGDM7aUO0ylMoR7e9",
+                "client_id":"lWDzChOKKoofBGqMvUADbbOYE0HHKedTf6qpOKhf",
                 "grant_type":"password",
                 "username":email,
                 "password":password

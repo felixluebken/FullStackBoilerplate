@@ -138,7 +138,7 @@ class StaffUserPage extends Component {
                         alignItems: "center"
                     }}
                 >
-                    <Rings color="#FF5622" height="200" width="200" />
+                    <Rings color="#274472" height="200" width="200" />
                 </div>
             )
         }

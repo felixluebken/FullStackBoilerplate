@@ -10,8 +10,6 @@ import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import StaffDashboardSimpleStat from "../../components/panels/StaffDashboardSimpleStat";
 import StaffDashboardListWrapper from '../../components/panels/StaffDashboardUserListWrapper';
 
-import StaffDashboardBarGraph from "../../components/panels/StaffDashboardBarGraph"
-import StaffDashboardPieGraph from "../../components/panels/StaffDashboardPieGraph"
 import StaffDashboardGraph from "../../components/panels/StaffDashboardGraph";
 
 
@@ -323,6 +321,7 @@ class StaffDashboardPage extends Component {
                 }
             })
             .then((res) => {
+                console.log(res.data)
                 this.setState({data:res.data.data,isLoading:false})
             })
             .catch((err) => {this.handleOpenSnackbar("something went wrong");console.log(err)})
