@@ -8,14 +8,9 @@ import { Rings } from 'react-loader-spinner';
 import axios from "axios";
 
 
-
-let proxy = "<YOUR PRODUCTION URL HERE>"
-if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') proxy = "http://localhost:8000/";
+const proxy = "http://localhost:8000/";
 
 
-const googleOauthConfig = {
-    clientId:"164434721707-23cv26uobk4s3pmf01rspvs19cgbde0c.apps.googleusercontent.com"
-}
 
 
 const StaffPage = (props) => {
@@ -30,7 +25,7 @@ const StaffPage = (props) => {
                     alignItems: "center"
                 }}
             >
-                <Rings color="#FF5622" height="200" width="200" />
+                <Rings color="#274472" height="200" width="200" />
             </div>
         )
     }
@@ -109,7 +104,7 @@ class StaffMain extends Component {
     authenticateUser = (email,password) => {
         axios
             .post(proxy+"oauth2/token/", {
-                "client_id":googleOauthConfig.clientId,
+                "client_id":"3s77VBZG0WbK4HubaP0V7pQfGDM7aUO0ylMoR7e9",
                 "grant_type":"password",
                 "username":email,
                 "password":password

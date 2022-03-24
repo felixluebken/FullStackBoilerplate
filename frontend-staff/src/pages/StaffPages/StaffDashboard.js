@@ -8,7 +8,7 @@ import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 
 import StaffDashboardSimpleStat from "../../components/panels/StaffDashboardSimpleStat";
-import StaffDashboardListWrapper from '../../components/panels/StaffDaashboardListWrapper';
+import StaffDashboardListWrapper from '../../components/panels/StaffDashboardUserListWrapper';
 
 import StaffDashboardBarGraph from "../../components/panels/StaffDashboardBarGraph"
 import StaffDashboardPieGraph from "../../components/panels/StaffDashboardPieGraph"
@@ -42,10 +42,9 @@ class StaffDashboardPage extends Component {
                 },
                 "user_stats": {
                     "gender": {},
-                    "age": {}
-                },
-                "recent_tickets": [],
-                "recent_events": []
+                    "age": {},
+                    "users":[],
+                }
             },
             timeFrame:'week',
             dataType:'totalVisitors',
@@ -67,17 +66,8 @@ class StaffDashboardPage extends Component {
 
     getGenderData = () => {
         let genderData = [];
-        if(this.state.data.user_stats.gender["F"]) genderData.push(this.state.data.user_stats.gender["F"])
-        else genderData.push(0)
 
-        if(this.state.data.user_stats.gender["M"]) genderData.push(this.state.data.user_stats.gender["M"])
-        else genderData.push(0)
-
-        if(this.state.data.user_stats.gender["B"]) genderData.push(this.state.data.user_stats.gender["B"])
-        else genderData.push(0)
-
-        if(this.state.data.user_stats.gender["N"]) genderData.push(this.state.data.user_stats.gender["N"])
-        else genderData.push(0)
+        // DO OPERATIONS HERE
 
         return genderData
     }
@@ -332,7 +322,9 @@ class StaffDashboardPage extends Component {
                     'accept':'application/json'
                 }
             })
-            .then((res) => this.setState({data:res.data.data,isLoading:false}))
+            .then((res) => {
+                this.setState({data:res.data.data,isLoading:false})
+            })
             .catch((err) => {this.handleOpenSnackbar("something went wrong");console.log(err)})
     }
 
@@ -351,7 +343,7 @@ class StaffDashboardPage extends Component {
                         alignItems: "center"
                     }}
                 >
-                    <Rings color="#FF5622" height="200" width="200" />
+                    <Rings color="#274472" height="200" width="200" />
                 </div>
             )
         }
@@ -377,9 +369,6 @@ class StaffDashboardPage extends Component {
 
                 <div className="staff_dashboard-panel_wrapper">
                     <StaffDashboardSimpleStat label="Total Visitors" value={this.getOverview('totalVisitors')} onClick={() => this.handleDataTypeChange('totalVisitors')} />
-                    <StaffDashboardSimpleStat label="Total Events" value={this.getOverview('totalEvents')} onClick={() => this.handleDataTypeChange('totalEvents')} />
-                    <StaffDashboardSimpleStat label="Tickets Sold" value={this.getOverview('ticketsSold')} onClick={() => this.handleDataTypeChange('ticketsSold')} />
-                    <StaffDashboardSimpleStat label="Revenue" value={this.getOverview('revenue')} onClick={() => this.handleDataTypeChange('revenue')} />
                 </div>
 
                 <div className="staff_dashboard-panel_wrapper">
@@ -392,23 +381,13 @@ class StaffDashboardPage extends Component {
                 </div>
 
                 <div className="staff_dashboard-panel_wrapper">
-                    <StaffDashboardBarGraph 
-                        data={this.getAgeData()} 
-                        labels={["18-21","22-26","27-30","30-33","34-40","41-50","51-60"]} 
-                        labelValue="Age"
-                        title={"Age"} 
-                        subtitle={"from all members"}/>
-                </div>
+                    
+                    <StaffDashboardListWrapper 
+                        title="Users" 
+                        link="/users" 
+                        items={this.state.data.user_stats.users}/>
 
-                <div className="staff_dashboard-panel_wrapper">
-                    <StaffDashboardPieGraph 
-                        data={this.getGenderData()} 
-                        labels={["Female","Male","Non Binary","Not Specified"]} 
-                        labelValue="Gender"
-                        title={"Gender"} 
-                        subtitle={"from all members"}/>
                 </div>
-
             </div>
         )
     }

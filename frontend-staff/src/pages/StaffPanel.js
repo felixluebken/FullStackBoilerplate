@@ -27,9 +27,7 @@ import './staff.css';
 
 
 import StaffDashboardPage from './StaffPages/StaffDashboard';
-
 import StaffUserPage from './StaffPages/StaffUserPage'
-
 import StaffVisitsPage from './StaffPages/StaffVisits';
 import StaffBlogPage from './StaffPages/StaffBlogs';
 
@@ -56,6 +54,9 @@ function StaffPanel(props) {
 
 
     const [currentPage,setCurrentPage] = React.useState('dashboard');
+    const changePage = (page) => {
+        setCurrentPage(page)
+    }
 
     const [openUser, setOpenUser] = React.useState(false);
 
@@ -72,9 +73,6 @@ function StaffPanel(props) {
     });
 
     return(
-
-
-
 
         <body>
         <HashRouter>
@@ -126,7 +124,7 @@ function StaffPanel(props) {
                             <Typography variant="body2" noWrap component="div" style={{color:"#393942",userSelect:"none",marginRight:"8px",marginTop:"10px"}}>
                                 {props.userData.first_name + " " + props.userData.last_name}
                             </Typography>
-                            <Avatar sx={{ bgcolor: '#FF5622' }}>{props.userData.first_name[0] + props.userData.last_name[0]}</Avatar>
+                            <Avatar sx={{ bgcolor: '#274472' }}>{props.userData.first_name[0] + props.userData.last_name[0]}</Avatar>
 
                         </div>
                     </Toolbar>
@@ -138,7 +136,7 @@ function StaffPanel(props) {
                     flexShrink: 0,
                     '& .MuiDrawer-paper': {
                         width: drawerWidth,
-                        backgroundColor:"#393942",
+                        backgroundColor:"#5885AF",
 
                         boxSizing: 'border-box',
                     },
@@ -149,42 +147,40 @@ function StaffPanel(props) {
 
                     <div className="nav_panel-logo">
                         <div className="nav_panel-logo_img"/>
-                        <Typography sx={{fontWeight:700}} variant="h5" style={{ color: '#F7F7F7', userSelect:"none" }}>WeParty</Typography>
+                        <Typography sx={{fontWeight:700}} variant="h5" style={{ color: '#F7F7F7', userSelect:"none" }}>Some App</Typography>
                         
                     </div>
 
                     <Link to="/" style={{textDecoration:"none",color:"gray"}} >
                         <ListItem button key={"dashboard"} style={{height:"60px"}} onClick={() => setCurrentPage('dashboard')}>
                             <ListItemIcon>
-                                <PieChartIcon style={{color:"#E8E9FF"}}/>
+                                <PieChartIcon style={{color:"rgb(247, 247, 247)"}}/>
                             </ListItemIcon>
                             <ListItemText 
-                            primary={<Typography variant="body2" style={{ color: '#E8E9FF' }}>Dashboard</Typography>} 
+                            primary={<Typography variant="body2" style={{ color: 'rgb(247, 247, 247)' }}>Dashboard</Typography>} 
                             />
                         </ListItem>
                     </Link>
-
                     
                     <Link to="/blog" style={{textDecoration:"none",color:"gray"}} >
                         <ListItem button key={"blog"} style={{height:"60px"}} onClick={() => setCurrentPage('blog')}>
                             <ListItemIcon>
-                                <BookIcon style={{color:"#E8E9FF"}}/>
+                                <BookIcon style={{color:"rgb(247, 247, 247)"}}/>
                             </ListItemIcon>
                             <ListItemText 
-                            primary={<Typography variant="body2" style={{ color: '#E8E9FF' }}>Blogs</Typography>} 
+                            primary={<Typography variant="body2" style={{ color: 'rgb(247, 247, 247)' }}>Blogs</Typography>} 
                             />
                         </ListItem>
                     </Link>
-                    
            
                     <Link to="/users" style={{textDecoration:"none",color:"gray"}} >
 
                         <ListItem button key={"tickets"} style={{height:"60px"}} onClick={() => setCurrentPage('users')}>
                             <ListItemIcon>
-                                <PersonIcon style={{color:"#E8E9FF"}}/>
+                                <PersonIcon style={{color:"rgb(247, 247, 247)"}}/>
                             </ListItemIcon>
                             <ListItemText 
-                            primary={<Typography variant="body2" style={{ color: '#E8E9FF' }}>Users</Typography>} 
+                            primary={<Typography variant="body2" style={{ color: 'rgb(247, 247, 247)' }}>Users</Typography>} 
                             />
                         </ListItem>
                     </Link>
@@ -193,10 +189,10 @@ function StaffPanel(props) {
 
                         <ListItem button key={"tickets"} style={{height:"60px"}} onClick={() => setCurrentPage('visits')}>
                             <ListItemIcon>
-                                <SsidChartIcon style={{color:"#E8E9FF"}}/>
+                                <SsidChartIcon style={{color:"rgb(247, 247, 247)"}}/>
                             </ListItemIcon>
                             <ListItemText 
-                            primary={<Typography variant="body2" style={{ color: '#E8E9FF' }}>Visits</Typography>} 
+                            primary={<Typography variant="body2" style={{ color: 'rgb(247, 247, 247)' }}>Visits</Typography>} 
                             />
                         </ListItem>
                     </Link>

@@ -52,19 +52,6 @@ class StaffUserPage extends Component {
             })
             .then((res) => this.setState({"userProfiles":res.data,isLoading:false}))
             .catch((err) => {this.handleOpenSnackbar("something went wrong");console.log(err)})
-        axios
-            .get(this.props.proxy+"staff/city",
-            {
-                headers: {
-                    'Authorization': localStorage.getItem('access_token')
-                            ? 'Bearer ' + localStorage.getItem('access_token')
-                            : null,
-                    'Content-Type': 'application/json',
-                    'accept':'application/json'
-                }
-            })
-            .then((res) => this.setState({"cities":res.data}))
-            .catch((err) => {this.handleOpenSnackbar("something went wrong");console.log(err)})
     }
 
 
@@ -86,47 +73,10 @@ class StaffUserPage extends Component {
             .then((res) => {this.handleOpenSnackbar(res.data.message);this.refreshData()})
             .catch((err) => {this.handleOpenSnackbar("something went wrong");console.log(err)})
     }
-    toggleVerified = (id) => {
-        axios
-            .post(this.props.proxy+"staff/user/", {
-                method:"toggle_verified",
-                email:id
-            },
-            {
-                headers: {
-                    'Authorization': localStorage.getItem('access_token')
-                            ? 'Bearer ' + localStorage.getItem('access_token')
-                            : null,
-                    'Content-Type': 'application/json',
-                    'accept':'application/json'
-                }
-            })
-            .then((res) => {this.handleOpenSnackbar(res.data.message);this.refreshData()})
-            .catch((err) => {this.handleOpenSnackbar("something went wrong");console.log(err)})
-
-    }
     toggleStaff = (id) => {
         axios
             .post(this.props.proxy+"staff/user/", {
                 method:"toggle_staff",
-                email:id
-            },
-            {
-                headers: {
-                    'Authorization': localStorage.getItem('access_token')
-                            ? 'Bearer ' + localStorage.getItem('access_token')
-                            : null,
-                    'Content-Type': 'application/json',
-                    'accept':'application/json'
-                }
-            })
-            .then((res) => {this.handleOpenSnackbar(res.data.message);this.refreshData()})
-            .catch((err) => {this.handleOpenSnackbar("something went wrong");console.log(err)})
-    }
-    toggleOrganizer = (id) => {
-        axios
-            .post(this.props.proxy+"staff/user/", {
-                method:"toggle_organizer",
                 email:id
             },
             {
@@ -200,9 +150,7 @@ class StaffUserPage extends Component {
                     cities={this.state.cities}
 
                     toggleActive={(id) => this.toggleActive(id)}
-                    toggleVerified={(id) => this.toggleVerified(id)}
                     toggleStaff={(id) => this.toggleStaff(id)}
-                    toggleOrganizer={(id) => this.toggleOrganizer(id)}
                     deleteUser={(id) => this.deleteUser(id)}
                 />
                 <Snackbar

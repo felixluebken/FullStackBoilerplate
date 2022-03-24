@@ -16,7 +16,6 @@ import './staff.css';
 
 
 
-import AmsterdamBackground from '../components/background/AmsterdamNightlifeBg';
 
 
 function StaffLoginPage(props) {
@@ -50,13 +49,12 @@ function StaffLoginPage(props) {
 
         <body className="login_page" style={{overflowX:"hidden",overflowY:"hidden"}}>        
 
-            <AmsterdamBackground />
             
-            <Box sx={{ display: 'flex',height:"100vh", justifyContent:"center", alignItems:"center", background:"white" }}>
+            <Box sx={{ display: 'flex',height:"100vh", justifyContent:"center", alignItems:"center", background:"#5885AF" }}>
                 <div className="login_panel">
                 <div className="login_panel-logo">
                     <div className="login_panel-logo_img"/>
-                    <Typography sx={{fontWeight:700}} variant="h4" style={{ color: '#393942', userSelect:"none" }}>WeParty</Typography>
+                    <Typography sx={{fontWeight:700}} variant="h4" style={{ color: '#393942', userSelect:"none" }}>Some App</Typography>
                     </div>
 
                     <Typography sx={{fontWeight:700}} variant="body1" style={{ color: '#393942', userSelect:"none",marginBottom:"20px" }}>{props.data.titleText}</Typography>
@@ -96,7 +94,7 @@ function StaffLoginPage(props) {
 
                     <Button 
                         variant="contained" 
-                        style={{backgroundColor:"#3552FB", width:'80%',marginTop:"30px"}}
+                        style={{backgroundColor:"#274472", width:'80%',marginTop:"30px"}}
                         onClick={() => props.authenticate(userLogin.email,userLogin.password)}
                         
                     >Authenticate</Button>

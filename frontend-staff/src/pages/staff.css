@@ -1,7 +1,7 @@
 
 
 body {
-    background-color: rgb(236, 238, 238);
+    background-color: white;
     margin:0;
 
     overflow-x:hidden;
@@ -9,7 +9,7 @@ body {
 }
 
 body.login_page {
-  background-color: #FF5622;
+  background-color: #5885AF;
   margin:0;
 
   height:100%;
@@ -44,8 +44,7 @@ body::-webkit-scrollbar-thumb {
     margin-bottom:35px;
 }
 .nav_panel-logo_img {
-    background-image: url(../assets/logos/main-orange.svg);
-    background-size:cover;
+    background-color: #274472;
 
     width:60px;
     height:60px;
@@ -94,9 +93,7 @@ body::-webkit-scrollbar-thumb {
   margin-bottom:35px;
 }
 .login_panel-logo_img {
-  background-image: url(../assets/logos/main-orange.svg);
-  background-size:cover;
-
+  background-color: #5885AF;
   width:80px;
   height:80px;
   border-radius:5px;
