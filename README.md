@@ -78,6 +78,8 @@ Once you created a superuser you can log in, and see a clean view of everything 
 Navigate to http://localhost:8000/auth/user/signup to see all the parameters for creating an account
 Navigate to http://localhost:8000/auth/user/signin to see all the parameters for signin
 
+Now direct your attention to /src/settings.py - give this a good read as all configurations, from social auth to production is described down here.
+
 In order to have access to the staff frontend, create an account using the http://localhost:8000/auth/user/signup endpoint, then log into the Django admin panel at http://localhost:8000/admin to set is_staff as true in the UserProfiles.
 
 ---
@@ -201,13 +203,3 @@ axios.post("https://localhost:8000/oauth2/convert-token/",
 *you can also use POSTMAN to simulate all of these requests*
 
 Now authentication is taken care of! You can modify the user profile to you liking, depending on what the client needs to store. I recommend not editing the user itself. I've taken liberty in including a user tracker, tracking the users ip, ua, etc.
-
-Now direct your attention to /src/settings.py - give this a good read as all configurations, from social auth to production is described down here.
-
-
-
-
-
-
-
-
