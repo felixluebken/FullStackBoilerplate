@@ -112,6 +112,7 @@ Setting up USER FRONTEND
 This section only describes how the React module should work with the Django backend. This is not provided, as the client may have specific requirements. 
 How to handle authentication for regular users is described below.
 
+As a requests library I will be using axios, which is built on top of XMLHttpRequest. It comes with error handling, and makes coding requests easier, and simpler to debug.
 
 When you get to building the regular user frontend in React JS, account creation will look something like this:
     NOTE: *I am using FormData instead of JSON to transfer image data for the avatar*
