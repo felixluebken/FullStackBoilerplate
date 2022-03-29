@@ -21,6 +21,7 @@ This chart is from a neat little article by Bennett Garner on medium. Contains s
 [Click here to read!](https://bennettgarner.medium.com/react-on-django-getting-started-f30de8d23504)
 
 Also if theres any issues with this package, don't hesitate to let me know:)
+
 ---
 
 Setting up Backend
