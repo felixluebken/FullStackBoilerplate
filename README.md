@@ -24,7 +24,7 @@ Also if theres any issues with this package, don't hesitate to let me know:)
 
 ---
 
-Setting up Backend
+Setting up BACKEND
 ============
 This section includes the setup of our Django backend module. This is meant as a baseline to build on top of.
 
