@@ -206,6 +206,30 @@ axios.post("https://localhost:8000/oauth2/convert-token/",
        
     })
 ~~~
+Similarly, when authenticating with Apple, you would do something like this.
+~~~
+axios.post("https://localhost:8000/oauth2/convert-token/",
+        {
+            token:ACCESS_TOKEN,             // OBTAINED FROM APPLE
+            backend:'apple-id',
+            grant_type: "convert_token",
+            // create client_id in django admin panel in django oath toolkit > applications
+            client_id: CLIENT_ID,
+        },
+        {
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        }
+    )
+    .then((res) => {
+        localStorage.setItem('access_token',res.data.access_token)      // store locally
+        localStorage.setItem('refresh_token',res.data.refresh_token)    // store locally
+    })
+    .catch((res) => {
+       
+    })
+~~~
 *you can also use POSTMAN to simulate all of these requests*
 
 Now authentication is taken care of! You can modify the user profile to you liking, depending on what the client needs to store. I recommend not editing the user itself. I've taken liberty in including a user tracker, tracking the users ip, ua, etc.
