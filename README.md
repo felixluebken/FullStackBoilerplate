@@ -20,7 +20,7 @@ This ones kinda self explanatory. React has become the industry standard in the 
 This chart is from a neat little article by Bennett Garner on medium. Contains some very useful info to get started.
 [Click here to read!](https://bennettgarner.medium.com/react-on-django-getting-started-f30de8d23504)
 
-
+Also if theres any issues with this package, don't hesitate to let me know:)
 ---
 
 Setting up Backend
@@ -82,9 +82,11 @@ Now direct your attention to /src/settings.py - give this a good read as all con
 
 In order to have access to the staff frontend, create an account using the http://localhost:8000/auth/user/signup endpoint, then log into the Django admin panel at http://localhost:8000/admin to set is_staff as true in the UserProfiles.
 
+IMPORTANT STEP: To get a feel for how things will look like in production / understand what is going on under the hood, please check out /src/settings.py - take a read at the comments
+
 ---
 
-Setting up Frontend
+Setting up STAFF FRONTEND
 ============
 This section includes the frontend React module, which your client will use. You can use a staff account created previously to log in here.
 
@@ -104,8 +106,11 @@ Now you can use the staff account (not superuser) to sign into the staff panel a
 
 
 ---
-Additional Info
+Setting up USER FRONTEND
 ============
+This section only describes how the React module should work with the Django backend. This is not provided, as the client may have specific requirements. 
+How to handle authentication for regular users is described below.
+
 
 When you get to building the regular user frontend in React JS, account creation will look something like this:
     NOTE: *I am using FormData instead of JSON to transfer image data for the avatar*
