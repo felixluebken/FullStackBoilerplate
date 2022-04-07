@@ -49,13 +49,15 @@ Now were gonna install any dependencies for our backend:
 pip install -r requirements.txt
 ~~~
 
-This will take a moment as quite a few large packages are included to make this backend framework run.
-
+This will take a moment as quite a few large packages are included to make this backend framework run. Now we will set up and migrate our databases.
+~~~
+cd src                                  
+python manage.py makemigrations         # migrate all items to database
+python manage.py migrate                # commmit migrations & set up database
+python manage.py migrate --run-syncdb   # initialize all tables (only run first time)
+~~~
 Lets see if the backend runs!
 ~~~
-cd src                          # navigate to the source of your backend
-python manage.py makemigrations # migrate all items to database
-python manage.py migrate        # commmit migrations
 python manage.py runserver      # run the server at port 8000
 ~~~
 NOTE: 
@@ -75,6 +77,15 @@ To be able to log into this panel run:
 python manage.py createsuperuser
 ~~~
 Once you created a superuser you can log in, and see a clean view of everything going on in the backend. Note: this is not the staff interface the client will be using. A staff user will be a regular user, with the is_staff set to true. This is mainly for security, as a superuser can delete the clients database, revoke staff status, and more. For this reason only YOU, the beautiful developer will have access to the proper Django backend.
+
+Now in order for the the staff frontend to connect to our backend we will need to add a few parameters in our django admin. Navigate to your django admin panel and under "DJANGO OAUTH TOOLKIT" click "Applications". Add a new application do the following:
+  * replace CLIENT ID with lWDzChOKKoofBGqMvUADbbOYE0HHKedTf6qpOKhf
+  * set CLIENT TYPE as "public"
+  * set AUTHORIZATION GRANT TYPE as "Resource owner password-based"
+  * set a NAME for our case we will use "Staff Auth"
+  * everything else can be left blank
+
+Now the staff authentication is all set up.
 
 Navigate to http://localhost:8000/auth/user/signup to see all the parameters for creating an account
 Navigate to http://localhost:8000/auth/user/signin to see all the parameters for signin
