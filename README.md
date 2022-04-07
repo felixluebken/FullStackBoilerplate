@@ -51,11 +51,20 @@ pip install -r requirements.txt
 
 This will take a moment as quite a few large packages are included to make this backend framework run. Now we will set up and migrate our databases.
 ~~~
-cd src                                  
-python manage.py makemigrations         # migrate all items to database
+cd src               
+python manage.py makemigrations blog    # set up blog
+python manage.py makemigrations user    # set up users
+python manage.py makemigrations         # set up remaining items
 python manage.py migrate                # commmit migrations & set up database
 python manage.py migrate --run-syncdb   # initialize all tables (only run first time)
 ~~~
+Although the staff api is meant for view use only, if you end up adding anything in the staff_api.models make sure to run
+~~~
+python manage.py makemigrations staff_api
+python manage.py migrate
+~~~
+after you have added your desired model. This is only for the first time.
+
 Lets see if the backend runs!
 ~~~
 python manage.py runserver      # run the server at port 8000
@@ -113,9 +122,7 @@ npm start
 ~~~
 You can also use yarn like a man lol.
 
-Now you can use the staff account (not superuser) to sign into the staff panel and start playing around!
-
-
+Since a superuser cannot log in you are gonna need to create a user using the http://localhost:8000/auth/user/signup endpoint, and then set the user is_staff as true in http://localhost:8000/admin. If you have completed all the previous steps properly you should be able to log in.
 
 ---
 Setting up USER FRONTEND
